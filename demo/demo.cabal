@@ -1,0 +1,29 @@
+cabal-version: 3.0
+
+name: demo
+version: 0
+
+common base
+    default-language: GHC2021
+    ghc-options: -Wall
+    default-extensions:
+        BlockArguments
+        LambdaCase
+        NoImplicitPrelude
+    build-depends:
+      , async ^>= 2.2.4
+      , base ^>= 4.16
+      , linear ^>= 1.21.10
+      , relude ^>= 1.1.0.0
+      , xturtle ^>= 0.2.0.0
+
+library
+    import: base
+    hs-source-dirs: library
+    exposed-modules: Demo
+
+executable demo
+    import: base
+    build-depends: demo
+    hs-source-dirs: executable
+    main-is: Main.hs
